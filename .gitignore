@@ -1,0 +1,21 @@
+carla_eggs/*.egg
+carla_eggs/*.whl
+models
+data
+
+*.prof
+
+__pycache__
+.ipynb_checkpoints/
+
+# DATA
+/sim-results/
+*.p
+*.pkl
+*.txt
+*.bin
+*.png
+*.ply
+*.tiff
+*.tif
+*.jpeg
