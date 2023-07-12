@@ -2200,6 +2200,7 @@ tests = ["PyTurboJPEG", "coverage", "lmdb", "onnx", "onnxoptimizer", "onnxruntim
 [package.source]
 type = "url"
 url = "https://download.openmmlab.com/mmcv/dist/cu113/torch1.10.0/mmcv-2.0.0-cp38-cp38-manylinux1_x86_64.whl"
+
 [[package]]
 name = "mmdet"
 version = "3.0.0"
@@ -4496,6 +4497,7 @@ typing-extensions = "*"
 [package.source]
 type = "url"
 url = "https://download.pytorch.org/whl/cu113/torch-1.10.0%2Bcu113-cp38-cp38-linux_x86_64.whl"
+
 [[package]]
 name = "torchvision"
 version = "0.11.0+cu113"
@@ -4518,6 +4520,7 @@ scipy = ["scipy"]
 [package.source]
 type = "url"
 url = "https://download.pytorch.org/whl/cu113/torchvision-0.11.0%2Bcu113-cp38-cp38-linux_x86_64.whl"
+
 [[package]]
 name = "tornado"
 version = "6.3.1"
@@ -4563,7 +4566,7 @@ telegram = ["requests"]
 [[package]]
 name = "trackeval"
 version = "1.0.dev1"
-description = ""
+description = "Code for evaluating object tracking"
 category = "main"
 optional = false
 python-versions = "*"
