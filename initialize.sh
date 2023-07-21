@@ -19,13 +19,13 @@ MODELFOLDER=${MODELFOLDER%/}  # remove trailing slash
 # Download AV datasets
 ################################
 
-# # -- kitti
+# -- kitti
 ./submodules/lib-avstack-api/data/download_KITTI_ImageSets.sh $DATAFOLDER
 ./submodules/lib-avstack-api/data/download_KITTI_object_data.sh $DATAFOLDER
 ./submodules/lib-avstack-api/data/download_KITTI_raw_data.sh $DATAFOLDER
 ./submodules/lib-avstack-api/data/download_KITTI_raw_tracklets.sh $DATAFOLDER
 
-# # -- nuscenes
+# -- nuscenes
 ./submodules/lib-avstack-api/data/download_nuScenes_mini.sh $DATAFOLDER
 
 # -- carla (our custom)
@@ -36,6 +36,6 @@ set +e
 set -e
 
 
-# # Link to the datasets
-# ln -sf ./submodules/lib-avstack-api/data data
-# ./data/add_custom_symlinks.sh
+# Link to the datasets
+ln -sf ./submodules/lib-avstack-api/data data
+./data/add_custom_symlinks.sh

@@ -12,6 +12,12 @@ Check out tutorials on our [ReadTheDocs][rtd-page] page!
 ### Requirements
 This currently only works on a Linux distribution (tested on Ubuntu 20.04 and 22.04). It also only works with Python 3.8. [Poetry][poetry] must be installed on your system to handle the dependencies.
 
+#### Troubleshooting
+
+- If you install poetry but your systems says it is not found, you may need to add the poetry path to your path. On linux, this would be: `export PATH="$HOME/.local/bin:$PATH"`. I recommend adding this to your `.bashrc` or `.zshrc` file.
+- Through an ssh connection, poetry may have keyring issues. If this is true, you can run the following: `export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring`
+
+
 ### Installation
 The best way to get started is to run the following:
 ```
@@ -33,7 +39,10 @@ To get fancy with it, you'll need perception models and datasets. To install tho
 ```
 ./initialize.sh  # to download models and datasets
 ```
-The initialization process may take a while -- it downloads perception models and AV datasets from our hosted data buckets.
+The initialization process may take a while -- it downloads perception models and AV datasets from our hosted data buckets. If you have a preferred place to store data and perception models, you can pass that as an argument by running:
+```
+./initialize.sh /path/to/save/data /path/to/save/models
+```
 
 ### Execute Full Tests
 Once this is finished, let's try out some more interesting tests such as
@@ -49,6 +58,14 @@ cd examples/hello_world
 poetry run python hello_perception.py
 ```
 which will check if we can properly set up perception models using `MMDetection`.
+
+### Fire Up Jupyter Notebooks
+Now that you have the basic tests running, fire up the jupyter notebooks to get in to some more involved experimentation. You can once again do this through poetry by running
+```
+poetry run jupyter notebook
+```
+Then go into `examples/notebooks` and start playing around with them.
+
 
 ## Important Notes
 
