@@ -10,7 +10,7 @@ Pioneers of autonomous vehicles (AVs) promised to revolutionize the driving expe
 Check out tutorials on our [ReadTheDocs][rtd-page] page!
 
 ### Requirements
-This currently only works on a Linux distribution (tested on Ubuntu 20.04 and 22.04). It also only works with Python 3.8. [Poetry][poetry] must be installed on your system to handle the dependencies.
+This currently only works on a Linux distribution (tested on Ubuntu 20.04 and 22.04). It also only works with Python 3.8. [Poetry][poetry] must be installed on your system to handle the dependencies. Python 3.8 must be installed on your system.
 
 #### Troubleshooting
 
@@ -65,11 +65,6 @@ Now that you have the basic tests running, fire up the jupyter notebooks to get 
 poetry run jupyter notebook
 ```
 Then go into `examples/notebooks` and start playing around with them.
-
-
-## Important Notes
-
-I'm still in the process of migrating the demos/tutorials to this repository, so please be patient! In the meantime, I highly recommend checking out things at [ReadTheDocs][rtd-page].
 
 
 ### Reporting Bugs
