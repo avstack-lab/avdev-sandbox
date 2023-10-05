@@ -1,9 +1,9 @@
 set -e
 
-DATAFOLDER=${1:-./data}
+DATAFOLDER=${1:-/data/$(whoami)}
 DATAFOLDER=${DATAFOLDER%/}  # remove trailing slash
 
-MODELFOLDER=${2:-./models}
+MODELFOLDER=${2:-/data/$(whoami)/models}
 MODELFOLDER=${MODELFOLDER%/}  # remove trailing slash
 
 
@@ -29,13 +29,10 @@ MODELFOLDER=${MODELFOLDER%/}  # remove trailing slash
 ./submodules/lib-avstack-api/data/download_nuScenes_mini.sh $DATAFOLDER
 
 # -- carla (our custom)
-./submodules/lib-avstack-api/data/download_CARLA_datasets.sh object-v1 $DATAFOLDER
-./submodules/lib-avstack-api/data/download_CARLA_datasets.sh collab-v1 $DATAFOLDER
-set +e
-./submodules/lib-avstack-api/data/download_CARLA_datasets.sh collab-v2 $DATAFOLDER  || echo "Could not complete collab-v2 download...continuing"
-set -e
+# ./submodules/lib-avstack-api/data/download_CARLA_datasets.sh ego-lidar $DATAFOLDER
+# ./submodules/lib-avstack-api/data/download_CARLA_datasets.sh multi-agent-v1 $DATAFOLDER
 
 
 # Link to the datasets
-ln -sf ./submodules/lib-avstack-api/data data
-./data/add_custom_symlinks.sh
+# ln -sf ./submodules/lib-avstack-api/data $DATAFOLDER
+# ./data/add_custom_symlinks.sh
