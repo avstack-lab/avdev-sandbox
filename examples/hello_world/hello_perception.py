@@ -25,11 +25,11 @@ if __name__ == "__main__":
         DM = SM.get_scene_dataset_by_index(0)
         
         # -- image inference
-        img = DM.get_image(DM.frames[0])
+        img = DM.get_image(DM.frames[0],sensor='image-2')
         dets_2d = M2D(img)
         
         # -- lidar inference
-        pc = DM.get_lidar(DM.frames[0])
+        pc = DM.get_lidar(DM.frames[0],sensor='image-2')
         dets_3d = M3D(pc)
 
     except Exception as e:
