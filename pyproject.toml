@@ -17,7 +17,7 @@ include = ["CHANGELOG.md"]
 [tool.poetry.dependencies]
 python = "~3.10"
 lib-avstack-api = { path = "submodules/lib-avstack-api", develop = true }
-lib-avstack-core = { path = "submodules/lib-avstack-core", develop = true }
+lib-avstack-core = { path = "submodules/lib-avstack-core", extras = ["percep"], develop = true }
 
 [tool.poetry.dev-dependencies]
 gdown = "^4.6.4"
@@ -25,6 +25,7 @@ ipywidgets = "^8.0"
 jupyter = "^1.0.0"
 
 [tool.poetry.group.test.dependencies]
+snakeviz="^2.1.1"
 pytest = "^7"
 pytest-cov = "^4"
 bandit = "^1.7"
@@ -32,7 +33,7 @@ black = "~22.12.0"
 mypy = "^0"
 isort = "^5.11"
 flake8 = "^5.0"
-snakeviz="^2.1.1"
+autoflake = "^1"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
