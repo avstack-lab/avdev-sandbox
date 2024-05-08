@@ -1,3 +1,5 @@
+.vscode
+*.gif
 carla_eggs/*.egg
 carla_eggs/*.whl
 models
