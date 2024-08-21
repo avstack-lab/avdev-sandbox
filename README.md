@@ -10,7 +10,7 @@ Pioneers of autonomous vehicles (AVs) promised to revolutionize the driving expe
 Check out tutorials on our [ReadTheDocs][rtd-page] page!
 
 ### Requirements
-This currently only works on a Linux distribution (tested on Ubuntu 20.04 and 22.04). It also only works with Python 3.8. [Poetry][poetry] must be installed on your system to handle the dependencies. Python 3.8 must be installed on your system.
+This currently only works on a Linux distribution (tested on Ubuntu 20.04 and 22.04). It also only works with Python 3.10. [Poetry][poetry] must be installed on your system to handle the dependencies. Python 3.10 must be installed on your system.
 
 #### Troubleshooting
 
