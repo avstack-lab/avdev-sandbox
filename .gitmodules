@@ -1,6 +1,6 @@
-[submodule "submodules/lib-avstack-core"]
-	path = submodules/lib-avstack-core
-	url = https://github.com/avstack-lab/lib-avstack-core
-[submodule "submodules/lib-avstack-api"]
-	path = submodules/lib-avstack-api
-	url = https://github.com/avstack-lab/lib-avstack-api
+[submodule "submodules/avstack-core"]
+	path = submodules/avstack-core
+	url = https://github.com/avstack-lab/avstack-core
+[submodule "submodules/avstack-api"]
+	path = submodules/avstack-api
+	url = https://github.com/avstack-lab/avstack-api

@@ -1,39 +1,66 @@
-[tool.poetry]
+[project]
 name = "avdev-sandbox"
 version = "0.1.0-alpha.1"
 description = "Sandbox for development and analysis of autonomous vehicles"
-authors = ["Spencer Hallyburton <spencer.hallyburton@duke.edu>"]
+authors = [{ name = "Spencer Hallyburton", email = "spencer.hallyburton@duke.edu" }]
+requires-python = ">=3.10,<3.11"
 readme = "README.md"
 license = "MIT"
-homepage = "https://avstack.org"
-repository = "https://github.com/avstack-lab/avdev-sandbox"
+keywords = [
+    "AVstack",
+    "autonomy",
+    "autonomous vehicles",
+]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
 ]
-keywords = ["AVstack", "autonomy", "autonomous vehicles"]
+dependencies = [
+    "avstack-api",
+    "avstack-core[percep]",
+]
+
+[project.urls]
+Homepage = "https://avstack.org"
+Repository = "https://github.com/avstack-lab/avdev-sandbox"
+
+[dependency-groups]
+dev = [
+    "gdown>=4.6.4,<5",
+    "ipywidgets~=8.0",
+    "jupyter>=1.0.0,<2",
+]
+test = [
+    "snakeviz>=2.1.1,<3",
+    "pytest>=7,<8",
+    "pytest-cov>=4,<5",
+    "bandit~=1.7",
+    "black[jupyter]~=22.12.0",
+    "mypy>=0,<1",
+    "isort~=5.11",
+    "flake8~=5.0",
+    "autoflake>=1,<2",
+]
+
+[tool.uv]
+default-groups = [
+    "dev",
+    "test",
+]
+
+[tool.uv.sources]
+avstack-api = { path = "submodules/avstack-api", editable = true }
+avstack-core = { path = "submodules/avstack-core", editable = true }
+
+[tool.hatch.build.targets.sdist]
 include = ["CHANGELOG.md"]
 
-[tool.poetry.dependencies]
-python = "~3.10"
-lib-avstack-api = { path = "submodules/lib-avstack-api", develop = true }
-lib-avstack-core = { path = "submodules/lib-avstack-core", extras = ["percep"], develop = true }
+[tool.hatch.build.targets.wheel]
+include = ["CHANGELOG.md"]
 
-[tool.poetry.dev-dependencies]
-gdown = "^4.6.4"
-ipywidgets = "^8.0"
-jupyter = "^1.0.0"
-
-[tool.poetry.group.test.dependencies]
-snakeviz="^2.1.1"
-pytest = "^7"
-pytest-cov = "^4"
-bandit = "^1.7"
-black = {extras = ["jupyter"], version = "~22.12.0"}
-mypy = "^0"
-isort = "^5.11"
-flake8 = "^5.0"
-autoflake = "^1"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
@@ -42,9 +69,3 @@ testpaths = [
     "tests",
     "integration",
 ]
-
-[build-system]
-requires = [
-    "poetry-core",
-]
-build-backend = "poetry.core.masonry.api"

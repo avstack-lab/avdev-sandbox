@@ -80,12 +80,12 @@ AVstack specific code is distributed under the MIT License.
 
 
 [rtd-page]: https://avstack.readthedocs.io/en/latest/
-[core]: https://github.com/avstack-lab/lib-avstack-core
-[api]: https://github.com/avstack-lab/lib-avstack-api
+[core]: https://github.com/avstack-lab/avstack-core
+[api]: https://github.com/avstack-lab/avstack-api
 [avstack-preprint]: https://arxiv.org/pdf/2212.13857.pdf
 [poetry]: https://github.com/python-poetry/poetry
 [mmdet-modelzoo]: https://mmdetection.readthedocs.io/en/stable/model_zoo.html
 [mmdet3d-modelzoo]: https://mmdetection3d.readthedocs.io/en/stable/model_zoo.html
-[contributing]: https://github.com/avstack-lab/lib-avstack-core/blob/main/CONTRIBUTING.md
-[license]: https://github.com/avstack-lab/lib-avstack-core/blob/main/LICENSE.md
+[contributing]: https://github.com/avstack-lab/avstack-core/blob/main/CONTRIBUTING.md
+[license]: https://github.com/avstack-lab/avstack-core/blob/main/LICENSE.md
 
