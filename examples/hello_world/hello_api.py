@@ -1,7 +1,9 @@
 import logging
 import os
 
-import avapi
+from avapi.carla import CarlaScenesManager
+from avapi.kitti import KittiScenesManager
+from avapi.nuscenes import nuScenesManager
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -13,17 +15,17 @@ if __name__ == "__main__":
         "kitti": {
             "active": True,
             "data_dir": os.path.join(data_dir, "KITTI", "object"),
-            "factory": avapi.kitti.KittiScenesManager,
+            "factory": KittiScenesManager,
         },
         "nuscenes": {
             "active": True,
             "data_dir": os.path.join(data_dir, "nuScenes"),
-            "factory": avapi.nuscenes.nuScenesManager,
+            "factory": nuScenesManager,
         },
         "carla": {
             "active": True,
             "data_dir": os.path.join(data_dir, "CARLA"),
-            "factory": avapi.carla.CarlaScenesManager,
+            "factory": CarlaScenesManager,
         },
     }
 

@@ -1,7 +1,8 @@
 import os
 
-import avapi
-import avstack
+from avapi.kitti import KittiScenesManager
+from avstack.modules.perception.object2dfv import MMDetObjectDetector2D
+from avstack.modules.perception.object3d import MMDetObjectDetector3D
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -11,12 +12,8 @@ data_dir = os.path.join(dir_path, "..", "..", "data")
 if __name__ == "__main__":
     # -- load perception models
     try:
-        M2D = avstack.modules.perception.object2dfv.MMDetObjectDetector2D(
-            dataset="cityscapes", model="fasterrcnn"
-        )
-        M3D = avstack.modules.perception.object3d.MMDetObjectDetector3D(
-            dataset="kitti", model="pointpillars"
-        )
+        M2D = MMDetObjectDetector2D(dataset="cityscapes", model="fasterrcnn")
+        M3D = MMDetObjectDetector3D(dataset="kitti", model="pointpillars")
     except Exception as e:
         print("\nLoading perception models FAILED!")
         raise e
@@ -26,7 +23,7 @@ if __name__ == "__main__":
     # -- perform inference
     try:
         data_path = os.path.join(data_dir, "KITTI", "object")
-        SM = avapi.kitti.KittiScenesManager(data_path)
+        SM = KittiScenesManager(data_path)
         DM = SM.get_scene_dataset_by_index(0)
 
         # -- image inference
